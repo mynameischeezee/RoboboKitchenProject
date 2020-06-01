@@ -1,0 +1,43 @@
+﻿<Window x:Name="MainWindow1" x:Class="RoboboKitchenProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoboboKitchenProject"
+        mc:Ignorable="d"
+        Title="Robobo" Height="712" Width="1357" Background="White" WindowStyle="None" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.21875*" MinWidth="420px">
+            </ColumnDefinition>
+            <ColumnDefinition Width="*" MinWidth="1500px">
+            </ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <!--<Frame Grid.Column="1" Source="UsrCtrl/Menu.xaml" Margin="0,-5,541,-6" BorderBrush="{x:Null}" BorderThickness="0"/>-->
+        <ListBox Grid.Column="1" Height="710" Width="932" Style="{StaticResource LstBoxMain}"  VerticalAlignment="Top" HorizontalAlignment="Left" ItemsSource="{Binding DishList}"  SelectedItem="{Binding ItemSelect}" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100px" />
+                            <ColumnDefinition Width="200px" />
+                            <ColumnDefinition Width="100px" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Name}" Grid.Column="0"/>
+                        <TextBlock Text="{Binding Type}" Grid.Column="1"/>
+                        <TextBlock Text="{Binding Cost}" Grid.Column="2"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Image Grid.Column="0" Source="pack://application:,,,/Media/Images/Logo+Text.png" Width="150px" VerticalAlignment ="Top" Margin="135,10,135,0"></Image>
+        <Button Grid.Column="0" x:Name="BTNOrder" Content="Order" Style="{StaticResource RoundedButton}" HorizontalAlignment="Center" VerticalAlignment="Top" Command="{Binding OrderCommand}">
+        </Button>
+        <Button Grid.Column="0" x:Name="BTNExit" Content="Exit" Style="{StaticResource NavButton}" VerticalAlignment="Bottom"  HorizontalAlignment="Stretch" Width="70" Height="40" Click="BTNExit_Click"></Button>
+        <StackPanel x:Name="NavBarHamburgerStack" Grid.Column="0" Margin="0,240,0,290">
+            <Button x:Name="BTNHamburgerMenu" Content="Menu" Style="{StaticResource LeftNavMenuButton}" Width="420" Margin="0" />
+            <Button x:Name="BTNHamburgerOptions" Content="Options" Style="{StaticResource LeftNavMenuButton}" Width="420" Margin="0"  />
+            <Button x:Name="BTNHamburgerCredits" Content="Credits" Style="{StaticResource LeftNavMenuButton}" Width="420" Margin="0" />
+        </StackPanel>
+    </Grid>
+</Window>

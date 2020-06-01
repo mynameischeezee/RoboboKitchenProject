@@ -1,0 +1,65 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:RoboboKitchenProject.Window">
+    
+    <Style TargetType="Button" x:Key="LeftNavMenuButton">
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Margin" Value="40,0,0,0"></Setter>
+        <Setter Property="FontFamily" Value="Muller"></Setter>
+        <Setter Property="FontWeight" Value="Light"></Setter>
+        <Setter Property="FontSize" Value="30px"></Setter>
+        <Setter Property="Height" Value="60px"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="BorderBrush" Value="{x:Null}"></Setter>
+    </Style>
+
+    <Style TargetType="Button" x:Key="NavButton">
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="FontFamily" Value="Muller"></Setter>
+        <Setter Property="FontWeight" Value="Light"></Setter>
+        <Setter Property="FontSize" Value="30px"></Setter>
+        <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+        <Setter Property="BorderBrush" Value="{x:Null}"></Setter>
+    </Style>
+
+    <Style x:Key="RoundedButton" TargetType="Button">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush  StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#ff9900" Offset="0"/>
+                    <GradientStop Color="#db0db2" Offset="0.5"/>
+                    <GradientStop Color="#0db9db" Offset="1.05"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="Height" Value="75px"></Setter>
+        <Setter Property="Width" Value="300px"></Setter>
+        <Setter Property="FontFamily" Value="Muller"></Setter>
+        <Setter Property="FontWeight" Value="Regular"></Setter>
+        <Setter Property="FontSize" Value="35px"></Setter>
+        <Setter Property="VerticalAlignment" Value="Stretch"></Setter>
+        <Setter Property="Margin" Value="0, 550, 0,0"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="40" Background="{TemplateBinding Background}" BorderThickness="1">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="Button" x:Key="MenuImage">
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="BorderBrush" Value="{x:Null}"></Setter>
+    </Style>
+    
+</ResourceDictionary>
